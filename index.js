@@ -9,12 +9,24 @@ const resolvers = {
     reviews() {
       return db.reviews;
     },
+    review(_,args){
+        return db.reviews.find((review)=>review.id===args.id)
+    },
     games() {
       return db.games;
+    },
+    game(_,args){
+        return db.games.find((game)=>game.id===args.id)
     },
     authors() {
       return db.authors;
     },
+    // author(parent,args,context)
+    author(_,args){
+        return db.authors.find((author)=>author.id===args.id)
+    },
+    
+
   },
 };
 
