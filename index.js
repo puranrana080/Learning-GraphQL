@@ -45,6 +45,13 @@ Review:{
     author(parent){
         return db.authors.find((a)=>a.id===parent.author_id)
     }
+},
+
+Mutation:{
+    deleteGame(_,args){
+        db.games=db.games.filter((g)=>g.id!==args.id)
+        return db.games
+    }
 }
 
 };
